@@ -1,42 +1,36 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import classNames from "classnames"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import "./header.scss"
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+const Header = () => {
+  const currentPath = "Home" // todo get this dynamically
+  const links = [
+    ["Home", "/"],
+    ["Wedding", "/wedding/"],
+    ["Travel", "/travel/"],
+    ["Registry", "registry"],
+    ["RSVP", "/rsvp/"],
+  ]
+  const desktopNav = links.map(([name, path]) => (
+    <li>
+      <Link to={path} className={classNames({ active: name === currentPath })}>
+        {name}
+      </Link>
+    </li>
+  ))
+  return (
+    <>
+      <header>
+        <h1>Joseph &amp; Savannah</h1>
+      </header>
+      <nav>
+        <ul>{desktopNav}</ul>
+        <div className="bar" />
+      </nav>
+    </>
+  )
 }
 
 export default Header
