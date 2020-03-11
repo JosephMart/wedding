@@ -8,18 +8,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Header from "./header"
 import "./layout.scss"
 import "./weddingCard.scss"
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <section id="WeddingCard">
-        <Header />
-        <main>{children}</main>
-      </section>
-    </>
+    <section id="WeddingCard">
+      <main>{children}</main>
+    </section>
   )
 }
 
