@@ -8,7 +8,9 @@ const Header = () => {
   const currentPath = "Home" // todo get this dynamically
   const links = [
     ["Home", "/"],
+    ["Our Story", "/story/"],
     ["Wedding", "/wedding/"],
+    ["Wedding Party", "/party/"],
     ["Travel", "/travel/"],
     ["Registry", "registry"],
     ["RSVP", "/rsvp/"],
@@ -23,7 +25,16 @@ const Header = () => {
   return (
     <>
       <header>
-        <h1>Joseph &amp; Savannah</h1>
+        <div className="flex-container">
+          <div className="flex-container header">
+            <h5>August 29, 2020</h5>
+            <h5>San Antonio, TX</h5>
+          </div>
+          <h5 className="hashtag">#MarryingMartinsen</h5>
+        </div>
+        <div className="flex-container header">
+          <h1>Savannah &amp; Joseph</h1>
+        </div>
       </header>
       <nav>
         <ul>{desktopNav}</ul>
