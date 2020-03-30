@@ -4,19 +4,21 @@ import { Link } from "gatsby"
 
 import "./header.scss"
 
+const links = [
+  ["Home", "/"],
+  ["Our Story", "/story/"],
+  ["Wedding", "/wedding/"],
+  ["Wedding Party", "/party/"],
+  ["Travel", "/travel/"],
+  ["Registry", "/registry/"],
+  ["RSVP", "/rsvp/"],
+]
+
 const Header = () => {
   const currentPath = "Home" // todo get this dynamically
-  const links = [
-    ["Home", "/"],
-    ["Our Story", "/story/"],
-    ["Wedding", "/wedding/"],
-    ["Wedding Party", "/party/"],
-    ["Travel", "/travel/"],
-    ["Registry", "registry"],
-    ["RSVP", "/rsvp/"],
-  ]
+
   const desktopNav = links.map(([name, path]) => (
-    <li>
+    <li key={name}>
       <Link to={path} className={classNames({ active: name === currentPath })}>
         {name}
       </Link>
