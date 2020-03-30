@@ -15,8 +15,9 @@ const links = [
 ]
 
 const Header = () => {
-  const currentPath = "Home" // todo get this dynamically
+  const currentPath = "Home" // TODO: get this dynamically
 
+  // TODO: turn this into an effect that depends on currentPath changes
   const desktopNav = links.map(([name, path]) => (
     <li key={name}>
       <Link to={path} className={classNames({ active: name === currentPath })}>
