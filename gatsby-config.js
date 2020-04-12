@@ -36,7 +36,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Pinyon Script"],
+          families: ["Pinyon Script", "Cormorant Garamond"],
         },
       },
     },
