@@ -25,6 +25,18 @@ const Header = ({ location }) => {
     setScrollPosition(position)
   }
 
+  const handleKeyDown = e => {
+    // Enter key
+    if (e.keyCode === 13) {
+      toggleMenu(t => !t)
+    }
+
+    // Escape key
+    if (e.keyCode === 27) {
+      toggleMenu(false)
+    }
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true })
 
@@ -65,8 +77,11 @@ const Header = ({ location }) => {
               "active-one": menuActive,
             })}
             onClick={() => toggleMenu(t => !t)}
+            onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex={0}
           >
-            <div className="hamburger hamburger-one"></div>
+            <div className="hamburger"></div>
           </div>
           <h1>Savannah &amp; Joseph</h1>
         </div>
@@ -78,7 +93,7 @@ const Header = ({ location }) => {
 
       {/* Overlay Mobile Menu */}
       <div id="myNav" className={classNames({ overlay: true, menuActive })}>
-        <div className="overlay-content">{desktopNav}</div>
+        <div className="overlay-content navList">{desktopNav}</div>
       </div>
     </div>
   )

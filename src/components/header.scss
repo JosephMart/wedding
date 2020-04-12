@@ -84,27 +84,27 @@
       border-left: none;
       font-size: 12px;
     }
+  }
 
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 14px;
-      color: black;
-      display: inline-block;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: $grey;
+    display: inline-block;
 
-      &:after {
-        content: "";
-        width: 0px;
-        height: 1px;
-        display: block;
-        background: $grey;
-        transition: 0.5s;
-      }
+    &:after {
+      content: "";
+      width: 0px;
+      height: 1px;
+      display: block;
+      background: $grey;
+      transition: 0.5s;
+    }
 
-      &:hover:after,
-      &.active:after {
-        width: 100%;
-      }
+    &:hover:after,
+    &.active:after {
+      width: 100%;
     }
   }
 
@@ -125,11 +125,12 @@
     }
 
     a {
-      padding: 8px;
-      text-decoration: none;
       font-size: 36px;
-      color: $grey;
-      display: block;
+
+      &:after {
+        margin-top: 5px;
+        height: 1.2px;
+      }
     }
   }
 
@@ -139,6 +140,15 @@
     width: 100%;
     text-align: center;
     margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .navItem {
+      margin: 1em;
+    }
   }
 
   @media screen and (max-width: $phone) {
