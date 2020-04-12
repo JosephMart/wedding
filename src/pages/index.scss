@@ -55,4 +55,60 @@
       // border-left: double;
     }
   }
+
+  @media screen and (max-width: $phone) {
+    .names {
+      text-align: center;
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0em;
+      display: block;
+      border-bottom: double;
+
+      h1 {
+        font-size: 44px;
+        color: $grey;
+      }
+
+      h5 {
+        font-size: 20px;
+      }
+    }
+
+    .homeInfo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0;
+      align-items: center;
+
+      .location,
+      .date {
+        margin-top: 4em;
+        margin-bottom: 4em;
+        flex-grow: 1;
+        text-align: center;
+        flex-basis: 0;
+      }
+
+      .location {
+        sup {
+          font-size: 0.5em;
+        }
+      }
+
+      .bar {
+        border-right: none;
+        border-bottom: double;
+        width: 100%;
+        border-left: none;
+        padding: 0.0339em;
+        align-self: stretch;
+      }
+
+      .date {
+        // border-left: double;
+      }
+    }
+  }
 }

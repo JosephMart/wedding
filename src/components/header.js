@@ -54,6 +54,12 @@ const Header = ({ location }) => {
         <div className="flex-container">
           <h1>Savannah &amp; Joseph</h1>
         </div>
+
+        {/* Mobile */}
+        <div className="headerFixed mobileHeader">
+          <span className="mobileMenuBtn" />
+          <h1>Savannah &amp; Joseph</h1>
+        </div>
       </header>
       <nav>
         <div className="navList">{desktopNav}</div>
