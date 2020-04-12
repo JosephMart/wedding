@@ -16,7 +16,13 @@ const Layout = ({ location, children }) => {
     <>
       <section>
         <Header location={location} />
-        <main>{children}</main>
+        <main id={location}>
+          {children}
+          {/* Footer */}
+          <div className="footer">
+            <h1 className="cursive">S &amp; J</h1>
+          </div>
+        </main>
       </section>
     </>
   )
