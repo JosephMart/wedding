@@ -98,7 +98,7 @@
         height: 1px;
         display: block;
         background: $grey;
-        transition: 300ms;
+        transition: 0.5s;
       }
 
       &:hover:after,
@@ -108,30 +108,95 @@
     }
   }
 
+  .overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.9;
+    overflow-y: hidden;
+    transition: 0.5s;
+
+    &.menuActive {
+      height: 100%;
+    }
+
+    a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: $grey;
+      display: block;
+    }
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
   @media screen and (max-width: $phone) {
     header {
       margin-left: 0em;
       margin-right: 0em;
       margin-bottom: 0em;
-      background-color: green;
 
       .mobileHeader {
         display: flex;
-        // justify-content: center;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 0em;
         border-bottom: double;
 
-        // .mobileMenuBtn:before {
-        //   content: "\E851";
-        //   overflow: hidden;
-        // }
-        // .mobileMenuBtn {
-        //   font-size: 30px;
-        //   cursor: pointer;
-        //   // margin-left: 0.5em;
-        // }
+        .hamburger {
+          top: 20%;
+
+          &:before {
+            top: -8px;
+          }
+
+          &:after {
+            top: 8px;
+          }
+
+          &,
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 3px;
+            background: $grey;
+            transition: 0.3s;
+          }
+        }
+
+        .icon-one {
+          position: fixed;
+          margin-top: 0em;
+          margin-left: 1.2em;
+          cursor: pointer;
+
+          &.active-one .hamburger {
+            background: rgba(0, 0, 0, 0);
+
+            &:before {
+              top: 0;
+              transform: rotate(45deg);
+            }
+
+            &:after {
+              top: 0;
+              transform: rotate(135deg);
+            }
+          }
+        }
 
         h1 {
           flex-grow: 1;

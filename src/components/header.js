@@ -18,6 +18,8 @@ const links = [
 
 const Header = ({ location }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [menuActive, toggleMenu] = useState(false)
+
   const handleScroll = () => {
     const position = window.pageYOffset
     setScrollPosition(position)
@@ -57,7 +59,15 @@ const Header = ({ location }) => {
 
         {/* Mobile */}
         <div className="headerFixed mobileHeader">
-          <span className="mobileMenuBtn" />
+          <div
+            className={classNames({
+              "icon-one": true,
+              "active-one": menuActive,
+            })}
+            onClick={() => toggleMenu(t => !t)}
+          >
+            <div className="hamburger hamburger-one"></div>
+          </div>
           <h1>Savannah &amp; Joseph</h1>
         </div>
       </header>
@@ -65,6 +75,11 @@ const Header = ({ location }) => {
         <div className="navList">{desktopNav}</div>
         <div className="bar" />
       </nav>
+
+      {/* Overlay Mobile Menu */}
+      <div id="myNav" className={classNames({ overlay: true, menuActive })}>
+        <div className="overlay-content">{desktopNav}</div>
+      </div>
     </div>
   )
 }
