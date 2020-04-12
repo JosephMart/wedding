@@ -79,7 +79,6 @@ const Header = ({ location }) => {
             onClick={() => toggleMenu(t => !t)}
             onKeyDown={handleKeyDown}
             role="button"
-            tabIndex={0}
           >
             <div className="hamburger"></div>
           </div>
