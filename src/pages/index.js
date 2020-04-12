@@ -11,6 +11,8 @@ const IndexPage = () => (
     <SEO title={pageTitle} />
     <div style={{ maxHeight: `100px`, maxWidth: "100%" }}>
       <Image file="homeImg.jpg" />
+      <br />
+      <h3 align="center">Coming soon....</h3>
     </div>
   </Layout>
 )
