@@ -24,7 +24,7 @@ const Header = ({ location }) => {
     </li>
   ))
   return (
-    <>
+    <div className="headerFixed">
       <header>
         <div className="flex-container">
           <div className="flex-container">
@@ -42,7 +42,7 @@ const Header = ({ location }) => {
         <ul>{desktopNav}</ul>
         <div className="bar" />
       </nav>
-    </>
+    </div>
   )
 }
 

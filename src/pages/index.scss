@@ -1,0 +1,55 @@
+@import "../components/constants.scss";
+
+#Home {
+  max-height: 100px;
+  max-width: 100%;
+  $sideMargin: 3em;
+
+  .names {
+    text-align: center;
+    margin-right: $sideMargin;
+    margin-left: $sideMargin;
+    padding: 2em;
+    display: block;
+    border-bottom: double;
+
+    h1 {
+      font-size: 64px;
+      color: $grey;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+  }
+
+  .homeInfo {
+    display: flex;
+    justify-content: center;
+    margin: $sideMargin;
+
+    .location,
+    .date {
+      // margin-top: 1em;
+      flex-grow: 1;
+      text-align: center;
+      flex-basis: 0;
+    }
+
+    .location {
+      sup {
+        font-size: 0.5em;
+      }
+    }
+
+    .bar {
+      border-right: solid 0.9px;
+      border-left: solid 0.9px;
+      padding: 0.8px;
+    }
+
+    .date {
+      // border-left: double;
+    }
+  }
+}

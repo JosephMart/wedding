@@ -1,10 +1,9 @@
 // Fonts
-@import url('https://use.typekit.net/oud1vew.css');
-
-@import './constants.scss';
+@import url("https://use.typekit.net/oud1vew.css");
+@import "./constants.scss";
 
 html {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   font-family: cormorant-garamond, serif;
   font-weight: 400;
   font-style: normal;
@@ -600,13 +599,13 @@ ul li {
   padding-left: 0;
 }
 
-li>ol {
+li > ol {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
 
-li>ul {
+li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
@@ -624,7 +623,7 @@ p *:last-child {
   margin-bottom: 0;
 }
 
-li>p {
+li > p {
   margin-bottom: calc(1.45rem / 2);
 }
 
@@ -716,6 +715,11 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: "";
+}
+
+.cursive {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 480px) {
