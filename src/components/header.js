@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+
 import classNames from "classnames"
 import propTypes from "prop-types"
 import { Link } from "gatsby"
@@ -16,6 +17,20 @@ const links = [
 ]
 
 const Header = ({ location }) => {
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const handleScroll = () => {
+    const position = window.pageYOffset
+    setScrollPosition(position)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   const desktopNav = links.map(([name, path]) => (
     <li key={name}>
       <Link to={path} className={classNames({ active: name === location })}>
@@ -24,7 +39,9 @@ const Header = ({ location }) => {
     </li>
   ))
   return (
-    <div className="headerFixed">
+    <div
+      className={classNames({ headerFixed: true, fixed: scrollPosition > 50 })}
+    >
       <header>
         <div className="flex-container">
           <div className="flex-container">
