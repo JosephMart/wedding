@@ -9,7 +9,7 @@ const pageTitle = "Wedding"
 const WeddingPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
-    <div style={{ maxWidth: `600px` }}>
+    <div style={{ maxHeight: `700px` }}>
       <Image file="homeImg.jpg" />
     </div>
   </Layout>
