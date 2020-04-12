@@ -10,13 +10,12 @@ import PropTypes from "prop-types"
 
 import Header from "./header"
 import "./layout.scss"
-import "./weddingCard.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
   return (
     <>
-      <section id="WeddingCard">
-        <Header />
+      <section>
+        <Header location={location} />
         <main>{children}</main>
       </section>
     </>
