@@ -32,11 +32,11 @@ const Header = ({ location }) => {
   }, [])
 
   const desktopNav = links.map(([name, path]) => (
-    <li key={name}>
+    <div key={name} className="navItem">
       <Link to={path} className={classNames({ active: name === location })}>
         {name}
       </Link>
-    </li>
+    </div>
   ))
   return (
     <div
@@ -56,7 +56,7 @@ const Header = ({ location }) => {
         </div>
       </header>
       <nav>
-        <ul>{desktopNav}</ul>
+        <div className="navList">{desktopNav}</div>
         <div className="bar" />
       </nav>
     </div>

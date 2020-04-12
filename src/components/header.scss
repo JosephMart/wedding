@@ -52,7 +52,7 @@
 
   &.fixed {
     header > .flex-container > h1 {
-      font-size: 1.5em;
+      font-size: 1.8em;
       transition: 0.2s;
     }
   }
@@ -60,6 +60,20 @@
   nav {
     width: 100%;
     display: inline-block;
+
+    .navList {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .navItem {
+        text-align: center;
+        margin-top: 0.5em;
+        margin-left: 2.15em;
+        margin-right: 2.15em;
+        margin-bottom: 0.5em;
+      }
+    }
 
     ul {
       list-style-type: none;
