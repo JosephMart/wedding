@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Marrying Martinsen`,
-    description: `Landing page for Savannah Grace Harper & Joseph Michael Martinsen's Wedding`,
+    description: `Savannah Grace Harper & Joseph Michael Martinsen's Wedding`,
     author: `@nbahoopstar`,
+    url: `https://marrying.martinsen.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,19 +19,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Marrying Martinsen`,
+        short_name: `MarryMartinsen`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#FFFFFF`,
+        theme_color: `#4a4a4a`,
+        display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
