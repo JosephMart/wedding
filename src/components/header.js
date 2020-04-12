@@ -1,5 +1,6 @@
 import React from "react"
 import classNames from "classnames"
+import propTypes from "prop-types"
 import { Link } from "gatsby"
 
 import "./header.scss"
@@ -14,13 +15,10 @@ const links = [
   ["RSVP", "/rsvp/"],
 ]
 
-const Header = () => {
-  const currentPath = "Home" // TODO: get this dynamically
-
-  // TODO: turn this into an effect that depends on currentPath changes
+const Header = ({ location }) => {
   const desktopNav = links.map(([name, path]) => (
     <li key={name}>
-      <Link to={path} className={classNames({ active: name === currentPath })}>
+      <Link to={path} className={classNames({ active: name === location })}>
         {name}
       </Link>
     </li>
@@ -29,13 +27,14 @@ const Header = () => {
     <>
       <header>
         <div className="flex-container">
-          <div className="flex-container header">
-            <h5>August 29, 2020</h5>
+          <div className="flex-container">
+            <h5 className="date">August 29, 2020</h5>
             <h5>San Antonio, TX</h5>
           </div>
+          {/* Maybe this should direct to https://www.instagram.com/explore/tags/MarryingMartinsen/? */}
           <h5 className="hashtag">#MarryingMartinsen</h5>
         </div>
-        <div className="flex-container header">
+        <div className="flex-container">
           <h1>Savannah &amp; Joseph</h1>
         </div>
       </header>
@@ -45,6 +44,14 @@ const Header = () => {
       </nav>
     </>
   )
+}
+
+Header.defaultProps = {
+  location: links[0][0],
+}
+
+Header.propTypes = {
+  location: propTypes.string,
 }
 
 export default Header

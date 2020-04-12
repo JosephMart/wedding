@@ -1,35 +1,36 @@
+@import "./constants.scss";
+
 header {
-  $marginEdge: .6em;
+  $marginEdge: 0.6em;
+  margin-top: 0.9em;
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 0em;
 
   .flex-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-
-    &.header {
-      justify-content: center;
-
-      h5 {
-        margin-left: $marginEdge;
-        margin-right: 1em;
-      }
-    }
+    text-align: center;
 
     h1 {
       flex-grow: 1;
+      margin-bottom: 0.2em;
+      color: $grey;
+      font-weight: 500;
       text-align: center;
+      font-size: 2.8em;
     }
 
     h5 {
-      margin-top: $marginEdge;
-      font-size: .95em;
-      text-align: center;
+      justify-content: center;
+      font-size: 0.9em;
+      font-weight: 500;
+      color: $grey;
       flex-grow: 0;
+    }
 
-      &.hashtag {
-        margin-right: $marginEdge;
-      }
+    .date {
+      margin-right: 1em;
     }
   }
 }
@@ -55,21 +56,31 @@ nav {
 
   div.bar {
     display: block;
-
-    border-bottom: 1px solid #eee;
-    margin-top: -1.6em;
-    margin-bottom: 1.6em;
-    border-bottom-width: 2px;
+    border-bottom: double;
+    border-right: none;
+    border-left: none;
     font-size: 12px;
   }
 
   a {
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
     color: black;
+    display: inline-block;
 
-    &:hover,
-    &.active {
-      text-decoration: underline;
+    &:after {
+      content: "";
+      width: 0px;
+      height: 1px;
+      display: block;
+      background: $grey;
+      transition: 300ms;
+    }
+
+    &:hover:after,
+    &.active:after {
+      width: 100%;
     }
   }
 }

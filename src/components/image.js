@@ -18,15 +18,22 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "homeImg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
+          fluid(maxHeight: 1800, maxWidth: 4400) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  console.log(data.placeholderImage.childImageSharp)
+  return (
+    <Img
+      fluid={{
+        ...data.placeholderImage.childImageSharp.fluid,
+        aspectRatio: 22 / 9,
+      }}
+    />
+  )
 }
 
 export default Image

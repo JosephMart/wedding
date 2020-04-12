@@ -4,15 +4,15 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const pageTitle = "Wedding"
+const pageTitle = "Registry"
 
-const WeddingPage = () => (
+const IndexPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
-    <div style={{ maxWidth: `600px` }}>
+    <div style={{ maxHeight: `700px` }}>
       <Image file="homeImg.jpg" />
     </div>
   </Layout>
 )
 
-export default WeddingPage
+export default IndexPage
