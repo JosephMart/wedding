@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#4a4a4a`,
         display: `standalone`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/MarryinMartinsenFacIcon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,
