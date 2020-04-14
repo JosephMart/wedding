@@ -15,9 +15,7 @@ const IndexPage = () => (
     <br />
 
     <div className="names">
-      <h1 className="cursive">
-        <span className="cursive0">S</span>avannah Harper
-      </h1>
+      <h1 className="cursive">Savannah Harper</h1>
       <h5>AND</h5>
       <h1 className="cursive">Joseph Martinsen</h1>
     </div>
