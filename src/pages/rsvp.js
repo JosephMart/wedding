@@ -11,7 +11,7 @@ const IndexPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
     <div className="title">
-      <h1 className="cursive">RSVP</h1>
+      <h1 className="cursive">{"RS V P"}</h1>
     </div>
 
     <div className="info">
