@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-
 import classNames from "classnames"
 import propTypes from "prop-types"
 import { Link } from "gatsby"

@@ -26,6 +26,17 @@
     input {
       width: 18em;
       padding: 0.5em;
+      border-color: $backgroundColor;
+      border-style: solid;
+      transition: 1s;
+
+      &.correct {
+        border-color: $kellyGreen;
+      }
+
+      &.wrong {
+        border-color: red;
+      }
 
       @media screen and (max-width: $phone) {
         text-align: center;
@@ -43,8 +54,37 @@
 
       &:active {
         box-shadow: inset 0px 0px 5px $grey;
-        outline: none;
-        border: none;
+        border: solid;
+        border-width: 0.05em;
+      }
+    }
+  }
+
+  .message {
+    padding: 5em;
+
+    // margin: 4em;
+
+    &.correct,
+    &.wrong {
+      p {
+        animation-name: showBlock;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+    }
+    p {
+      opacity: 0;
+
+      font-style: italic;
+      text-align: center;
+
+      &.correct {
+        color: $kellyGreen;
+      }
+
+      &.wrong {
+        color: red;
       }
     }
   }
