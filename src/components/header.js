@@ -99,7 +99,7 @@ const Header = ({ location }) => {
 }
 
 Header.defaultProps = {
-  location: links[0][0],
+  location: "",
 }
 
 Header.propTypes = {
