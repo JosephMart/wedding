@@ -40,13 +40,11 @@
       width: 6em;
       border: double;
       cursor: pointer;
-      // transition: 0.1s;
 
       &:active {
         box-shadow: inset 0px 0px 5px $grey;
         outline: none;
         border: none;
-        // color: white;
       }
     }
   }

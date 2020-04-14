@@ -23,7 +23,7 @@ const IndexPage = () => (
     </div>
 
     <div className="search">
-      <input type="text" />
+      <input type="text" name="name" />
       <button>Search</button>
     </div>
   </Layout>

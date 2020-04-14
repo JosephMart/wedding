@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import HomeImg from "../images/homeImg"
 import SEO from "../components/seo"
 
 import "./index.scss"
@@ -11,7 +11,7 @@ const pageTitle = "Home"
 const IndexPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
-    <Image file="homeImg.jpg" />
+    <HomeImg />
     <br />
 
     <div className="names">
