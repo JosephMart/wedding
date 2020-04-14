@@ -15,13 +15,12 @@ const IndexPage = () => (
     <br />
 
     <div className="names">
-      <h1 className="cursive">Savannah Harper</h1>
+      <h1 className="cursive">Savannah Grace Harper</h1>
       <h5>AND</h5>
-      <h1 className="cursive">Joseph Martinsen</h1>
+      <h1 className="cursive">Joseph Michael Martinsen</h1>
     </div>
 
     <div className="homeInfo flex-container">
-      {/* <div className="flex-container"> */}
       <div className="location">
         <h2>
           August 29<sup>th</sup>, 2020
