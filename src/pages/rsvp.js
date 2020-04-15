@@ -28,7 +28,7 @@ const RSVPPage = () => {
   const handleSearch = async () => {
     trackPromise(
       ky
-        .get("https://registry-two.now.sh/api/register", {
+        .get("https://registry-two.now.sh/api/canRegister", {
           // .get("http://localhost:3000/api/canRegister", {
           searchParams: new URLSearchParams({ name: searchState.searchText }),
         })
