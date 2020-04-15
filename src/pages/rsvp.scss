@@ -61,9 +61,7 @@
   }
 
   .message {
-    padding: 5em;
-
-    // margin: 4em;
+    text-align: center;
 
     &.correct,
     &.wrong {
@@ -87,5 +85,10 @@
         color: red;
       }
     }
+  }
+
+  .rsvpForm {
+    // display: flex;
+    // justify-content: center;
   }
 }
