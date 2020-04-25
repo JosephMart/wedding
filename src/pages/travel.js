@@ -8,6 +8,7 @@ const pageTitle = "Travel"
 const IndexPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
+    <h1 className="title cursive">Travel</h1>
   </Layout>
 )
 
