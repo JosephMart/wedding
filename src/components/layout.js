@@ -11,16 +11,16 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.scss"
 
-const Layout = ({ location, children }) => {
+const Layout = ({ location, children, idName = "" }) => {
   return (
     <>
       <section>
         <Header location={location} />
-        <main id={location}>
+        <main id={idName === "" ? location : idName}>
           {children}
           {/* Footer */}
           <div className="footer">
-            <h1 className="cursive">S &amp; J</h1>
+            <h1 className="cursive initials">S &amp; J</h1>
           </div>
         </main>
       </section>

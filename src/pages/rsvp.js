@@ -80,10 +80,7 @@ const RSVPPage = () => {
   return (
     <Layout location={pageTitle}>
       <SEO title={pageTitle} />
-      <div className="title">
-        <h1 className="cursive">{"RS V P"}</h1>
-      </div>
-
+      <h1 className="title cursive">{"RS V P"}</h1>
       <div className="info">
         <p>
           Please let us know your plans here by entering your name as it appears

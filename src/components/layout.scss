@@ -732,7 +732,32 @@ h6 {
 
 .cursive {
   font-family: "Pinyon Script", cursive;
+  font-size: 3.5em;
   font-weight: 400;
+
+  &.initials {
+    font-size: 2em;
+  }
+
+  @media screen and (max-width: $phone) {
+    font-size: 2.8em;
+  }
+}
+
+.title {
+  margin-top: 3em;
+  text-align: center;
+
+  @media screen and (max-width: $phone) {
+    margin-top: 1.8em;
+  }
+}
+
+.vertical-bar {
+  border-right: solid 0.9px;
+  border-left: solid 0.9px;
+  padding: 0.0339em;
+  align-self: stretch;
 }
 
 .footer {

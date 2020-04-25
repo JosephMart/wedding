@@ -20,7 +20,7 @@ const IndexPage = () => (
       <h1 className="cursive">Joseph Michael Martinsen</h1>
     </div>
 
-    <div className="homeInfo flex-container">
+    <div className="homeInfo">
       <div className="location">
         <h2>
           August 29<sup>th</sup>, 2020

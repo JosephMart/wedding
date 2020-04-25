@@ -3,7 +3,6 @@
 #Home {
   max-height: 100px;
   max-width: 100%;
-  $sideMargin: 3em;
 
   .names {
     text-align: center;
@@ -26,7 +25,10 @@
   .homeInfo {
     display: flex;
     justify-content: center;
-    margin: $sideMargin;
+    margin-left: $sideMargin;
+    margin-right: $sideMargin;
+    margin-top: 3em;
+    margin-bottom: 3em;
     align-items: center;
 
     .location,
@@ -44,6 +46,7 @@
       }
     }
 
+    // vertical bar reference
     .bar {
       border-right: solid 0.9px;
       border-left: solid 0.9px;
