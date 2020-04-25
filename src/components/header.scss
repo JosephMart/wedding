@@ -7,6 +7,10 @@
   width: 100%;
   background-color: #f5f5f5;
 
+  .hashtag {
+    text-transform: none;
+  }
+
   header {
     margin-left: 0.9em;
     margin-right: 0.9em;
@@ -33,7 +37,6 @@
 
       h5 {
         justify-content: center;
-        font-size: 0.9em;
         font-weight: 500;
         margin-top: 1.2em;
         margin-bottom: 0em;

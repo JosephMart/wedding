@@ -58,6 +58,11 @@
   .message {
     text-align: center;
 
+    .loading {
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+
     &.correct,
     &.wrong {
       p {

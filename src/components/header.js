@@ -62,7 +62,15 @@ const Header = ({ location }) => {
             <h5>San Antonio, TX</h5>
           </div>
           {/* Maybe this should direct to https://www.instagram.com/explore/tags/MarryingMartinsen/? */}
-          <h5 className="hashtag">#MarryingMartinsen</h5>
+          <a
+            className="hashtag"
+            href="https://www.instagram.com/explore/tags/MarryingMartinsen/"
+            target="_blank"
+            rel="noopener"
+          >
+            <h5>#MarryingMartinsen</h5>
+          </a>
+          {/* <h5 className="hashtag">#MarryingMartinsen</h5> */}
         </div>
         <div className="flex-container">
           <h1>Savannah &amp; Joseph</h1>
@@ -91,7 +99,19 @@ const Header = ({ location }) => {
 
       {/* Overlay Mobile Menu */}
       <div id="myNav" className={classNames({ overlay: true, menuActive })}>
-        <div className="overlay-content navList">{desktopNav}</div>
+        <div className="overlay-content navList">
+          {desktopNav}
+          <div className="navItem">
+            <a
+              className="hashtag"
+              href="https://www.instagram.com/explore/tags/MarryingMartinsen/"
+              target="_blank"
+              rel="noopener"
+            >
+              #MarryingMartinsen
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   )

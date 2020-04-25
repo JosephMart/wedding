@@ -106,7 +106,13 @@ const RSVPPage = () => {
 
       {/* Search Result Message */}
       <div className={classNames({ message: true, correct, wrong })}>
-        {promiseInProgress === true ? <BeatLoader /> : genMsg()}
+        {promiseInProgress === true ? (
+          <div className="loading">
+            <BeatLoader />
+          </div>
+        ) : (
+          genMsg()
+        )}
       </div>
 
       {/* RSVP Form */}
