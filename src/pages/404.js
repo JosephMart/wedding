@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const NotFoundPage = () => (
   <Layout>
     <SEO title="Woops!" />
-    <h3 style={{ textAlign: "center ", padding: "3em", padding: "3em" }}>
+    <h3 style={{ textAlign: "center ", padding: "3em" }}>
       Looks like Joseph messed up...
     </h3>
     <div

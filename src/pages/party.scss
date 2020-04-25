@@ -9,7 +9,10 @@ $mobileSquareSpacing: 3.5em;
     margin-left: $sideMargin;
     margin-right: $sideMargin;
     text-align: center;
-    // border-bottom: double;
+
+    @media screen and (max-width: $phone) {
+      margin: 0em;
+    }
   }
 
   .partySquares {
@@ -24,8 +27,7 @@ $mobileSquareSpacing: 3.5em;
 
     @media screen and (max-width: $phone) {
       flex-direction: column;
-      margin-top: 0em;
-      margin-bottom: 0em;
+      margin: 0em;
 
       h3 {
         margin-bottom: 0em;
