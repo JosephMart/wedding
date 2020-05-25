@@ -44,7 +44,7 @@ const IndexPage = () => (
     <SEO title={pageTitle} />
     <div className="titleHead">
       <h1 className="title cursive">Wedding Party</h1>
-      <p>Meet our close buds.</p>
+      <p>Meet our Bridesmaids and Groomsmen</p>
     </div>
 
     {genPartySquares()}
