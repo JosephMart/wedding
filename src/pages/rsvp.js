@@ -9,7 +9,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import FormEntry from "../components/RSVP/FormEntry"
 
-import guestReducer from "../reducers/guestReducer"
+import guestReducer, {
+  UPDATE_GUEST,
+  EMPTY_GUEST,
+} from "../reducers/guestReducer"
 
 import "./rsvp.scss"
 
@@ -33,6 +36,7 @@ const SearchResultsText = ({ hasSearched, foundMatch, match }) => {
 }
 
 const RSVPPage = () => {
+  // State for searching and finding an RSVP match
   const [searchState, setSearchState] = useState({
     hasSearched: false,
     foundMatch: false,
@@ -41,29 +45,18 @@ const RSVPPage = () => {
     match: undefined,
   })
 
-  const [guestState, guestDispatcher] = useReducer(guestReducer, [
-    {
-      name: "Joseph Martinsen",
-      diet: {
-        vegetarian: false,
-        celiac: true,
-        dairy: false,
-      },
-    },
-    {
-      name: "Savannah Harper",
-      diet: {
-        vegetarian: true,
-        celiac: false,
-        dairy: true,
-      },
-    },
-  ])
-
+  // Keep track registration info, should be a state machine?
   const [registerState, setRegisterState] = useState({
+    attending: true,
+    attendingModified: false,
     registered: false,
-    rsvpName: "AMY CLARK",
+    rsvpName: "",
   })
+
+  // State for tracking guests added to the RSVP list
+  const [guestState, guestDispatcher] = useReducer(guestReducer, [])
+
+  // I am too lazy to implement a reducer to load my search fetch request...
   const { promiseInProgress } = usePromiseTracker()
 
   /**
@@ -72,8 +65,8 @@ const RSVPPage = () => {
   const handleSearch = async () => {
     trackPromise(
       ky
-        .get("https://registry-two.now.sh/api/canRegister", {
-          // .get("http://localhost:3000/api/canRegister", {
+        // .get("https://registry-two.now.sh/api/canRegister", {
+        .get("http://localhost:3000/api/canRegister", {
           searchParams: new URLSearchParams({ name: searchState.searchText }),
         })
         .json()
@@ -88,44 +81,46 @@ const RSVPPage = () => {
             match,
           }))
 
-          if (match === undefined) {
+          // If not success, something bad happened or no result found
+          if (!parsed.success) {
             return
           }
 
-          // Set first user register entry as the RSVP user, if no users set?
+          // Store the rsvpName internally for registration, could use searchState?
           setRegisterState(state => ({
             ...state,
             rsvpName: match.rsvpName,
-            users: [
-              {
-                firstName: match.firstName,
-                lastName: match.lastName,
-                diet: {
-                  vegetarian: false,
-                  celiac: false,
-                  dairy: false,
-                },
-              },
-            ],
           }))
+
+          // Set first user register entry as the RSVP user, if no users set?
+          guestDispatcher({
+            type: UPDATE_GUEST,
+            index: 0,
+            data: {
+              ...EMPTY_GUEST,
+              name: `${match.firstName} ${match.lastName}`,
+            },
+          })
         })
     )
   }
 
+  /**
+   * Handle the submit registration
+   */
   const tryToRegister = async () => {
     trackPromise(
       ky
-        .post("https://registry-two.now.sh/api/register", {
-          // .post("http://localhost:3000/api/register", {
+        // .post("https://registry-two.now.sh/api/register", {
+        .post("http://localhost:3000/api/register", {
           // json: { rsvpName: registerState.match.rsvpName, users: registerState.users },
           json: {
             rsvpName: registerState.rsvpName,
-            users: registerState.users,
+            users: guestState,
           },
         })
         .json()
         .then(parsed => {
-          console.log(parsed)
           setRegisterState(state => ({
             ...state,
             registered: parsed.success,
@@ -144,26 +139,43 @@ const RSVPPage = () => {
     }
   }
 
+  /**
+   * On search text change
+   */
   const onTextChange = e => {
     const searchText = e.target.value
     setSearchState(state => ({ ...state, searchText }))
   }
 
+  const handleAttending = e => {
+    const attending = e.target.name.split("-")[1] === "1"
+    setRegisterState(state => ({
+      ...state,
+      attendingModified: true,
+      attending,
+    }))
+  }
+
   const correct = searchState.hasSearched && searchState.foundMatch
-  const wrong = searchState.hasSearched && !searchState.foundMatch // this is just !correct?
+  const wrong = searchState.hasSearched && !searchState.foundMatch
 
   return (
     <Layout location={pageTitle}>
       <SEO title={pageTitle} />
+      {/* Header info */}
       <h1 className="title cursive">{"RS V P"}</h1>
       <div className="info">
         <p>
           Please let us know your plans here by entering your name as it appears
           on your invitation.
         </p>
+        <p>
+          Please RSVP by August 1<sup>st</sup>, 2020
+        </p>
         <p>We hope we get to celebrate together!</p>
       </div>
 
+      {/* Search input */}
       <div className="search">
         <input
           type="text"
@@ -179,7 +191,7 @@ const RSVPPage = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      {/* Search Result Message */}
+      {/* Search Result Message and Loader */}
       <div className={classNames({ message: true, correct, wrong })}>
         {promiseInProgress === true && (
           <div className="loading">
@@ -193,15 +205,48 @@ const RSVPPage = () => {
         />
       </div>
 
-      {searchState.foundMatch ||
-        (true && (
+      {/* Accept or decline invitation */}
+      {correct && (
+        <div className="invitationAnswer">
+          <h1 className="cursive">Will you be attending?</h1>
+          <fieldset name="attending" className="fancyInputSelect">
+            {/* TODO: these should be radio buttons for accessibility */}
+            <input
+              type="checkbox"
+              id="attending-1"
+              name="attending-1"
+              checked={
+                registerState.attendingModified && registerState.attending
+              }
+              onChange={handleAttending}
+            />
+            <label htmlFor="attending-1">Joyfully Accept</label>
+
+            <input
+              type="checkbox"
+              id="attending-0"
+              name="attending-0"
+              checked={
+                registerState.attendingModified && !registerState.attending
+              }
+              onChange={handleAttending}
+            />
+            <label htmlFor="attending-0">Regretfully Decline</label>
+          </fieldset>
+        </div>
+      )}
+
+      {/* RSVP Form entry */}
+      {registerState.attendingModified &&
+        correct &&
+        registerState.attending && (
           <FormEntry
             state={guestState}
             dispatch={guestDispatcher}
             setRegisterState={setRegisterState}
             tryToRegister={tryToRegister}
           />
-        ))}
+        )}
     </Layout>
   )
 }

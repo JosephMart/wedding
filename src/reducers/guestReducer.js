@@ -2,7 +2,7 @@ export const ADD_GUEST = "ADD_GUEST"
 export const REMOVE_GUEST = "REMOVE_GUEST"
 export const UPDATE_GUEST = "UPDATE_GUEST"
 
-const EmptyGuest = {
+export const EMPTY_GUEST = {
   name: "",
   diet: {
     vegetarian: false,
@@ -14,7 +14,7 @@ const EmptyGuest = {
 const guestReducer = (state, { type, index = -1, data }) => {
   switch (type) {
     case ADD_GUEST:
-      return [...state, EmptyGuest]
+      return [...state, EMPTY_GUEST]
 
     case REMOVE_GUEST:
       return [...state.slice(0, index), ...state.slice(index + 1)]

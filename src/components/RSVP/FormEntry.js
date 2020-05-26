@@ -8,7 +8,7 @@ import {
 } from "../../reducers/guestReducer"
 
 const FormRow = ({ index, dispatch, ...state }) => {
-  const handleRadioBtn = e => {
+  const handleCheckBox = e => {
     const [name] = e.target.name.split("-")
     dispatch({
       type: UPDATE_GUEST,
@@ -32,8 +32,8 @@ const FormRow = ({ index, dispatch, ...state }) => {
           placeholder="Name"
           onChange={e =>
             dispatch({
-              type: UPDATE_GUEST,
               index,
+              type: UPDATE_GUEST,
               data: { ...state, name: e.target.value },
             })
           }
@@ -41,14 +41,14 @@ const FormRow = ({ index, dispatch, ...state }) => {
       </div>
 
       <div className="inputAllergy">
-        <fieldset name={`allergy-${index}`}>
+        <fieldset name={`allergy-${index}`} className="fancyInputSelect">
           <legend>Food Allergy</legend>
           <input
             type="checkbox"
             id={`celiac-${index}`}
             name={`celiac-${index}`}
             checked={state.diet.celiac}
-            onChange={handleRadioBtn}
+            onChange={handleCheckBox}
           />
           <label htmlFor={`celiac-${index}`}>Celiac</label>
 
@@ -57,7 +57,7 @@ const FormRow = ({ index, dispatch, ...state }) => {
             id={`dairy-${index}`}
             name={`dairy-${index}`}
             checked={state.diet.dairy}
-            onChange={handleRadioBtn}
+            onChange={handleCheckBox}
           />
           <label htmlFor={`dairy-${index}`}>Dairy</label>
 
@@ -66,7 +66,7 @@ const FormRow = ({ index, dispatch, ...state }) => {
             id={`vegetarian-${index}`}
             name={`vegetarian-${index}`}
             checked={state.diet.vegetarian}
-            onChange={handleRadioBtn}
+            onChange={handleCheckBox}
           />
           <label htmlFor={`vegetarian-${index}`}>Vegetarian</label>
         </fieldset>
@@ -107,7 +107,7 @@ const FormEntry = ({ state, dispatch, tryToRegister }) => {
       {/* Rows */}
       {rows}
 
-      {/* Add new row */}
+      {/* Add new row or Submit */}
       <div className="formRow footerAdd">
         <button type="button" onClick={() => dispatch({ type: ADD_GUEST })}>
           <h3>
