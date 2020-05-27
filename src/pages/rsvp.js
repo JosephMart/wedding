@@ -144,7 +144,7 @@ const RSVPPage = props => {
             ...state,
             registered: parsed.success,
           }))
-          props.navigate("/rsvp/result", {
+          props.navigate("/rsvpResult", {
             state: {
               rsvpName: registerState.rsvpName,
               success: parsed.success,
