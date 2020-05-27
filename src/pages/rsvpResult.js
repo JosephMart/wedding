@@ -16,6 +16,7 @@ const PageWrapper = ({ children }) => (
 
 const RSVPResultPage = ({ location, navigate }) => {
   const rsvpState = location.state
+  console.log(rsvpState)
 
   console.log(rsvpState)
   // Redirect to /rsvp if no state has been passed in
