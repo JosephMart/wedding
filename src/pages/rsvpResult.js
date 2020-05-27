@@ -16,17 +16,16 @@ const PageWrapper = ({ children }) => (
 
 const RSVPResultPage = ({ location, navigate }) => {
   const rsvpState = location.state
-  console.log(rsvpState)
+  const needToRedirect = rsvpState.rsvpName === undefined
 
-  console.log(rsvpState)
   // Redirect to /rsvp if no state has been passed in
   useEffect(() => {
-    if (!rsvpState) {
+    if (needToRedirect) {
       navigate("/rsvp")
     }
   })
 
-  if (!rsvpState) {
+  if (needToRedirect) {
     return null
   }
 
