@@ -4,6 +4,12 @@
   margin-right: $sideMargin;
   margin-left: $sideMargin;
 
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
   .header {
     h3 {
       font-style: italic;
@@ -15,8 +21,8 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-
-    // transition: 0.2s;
+    animation-name: showBlock;
+    animation-duration: 1s;
 
     &:not(:last-child) {
       padding-bottom: 2em;
@@ -50,28 +56,6 @@
       }
     }
 
-    .inputAction {
-      button {
-        background-color: transparent;
-        text-align: center;
-        border: double;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:active {
-          box-shadow: inset 0px 0px 5px $grey;
-        }
-
-        h4 {
-          margin: 0.5em;
-          font-size: 1.1em;
-          font-style: italic;
-        }
-      }
-    }
-
     .inputAllergy {
       fieldset {
         border: none;
@@ -79,9 +63,6 @@
 
       legend {
         display: none;
-      }
-
-      label {
       }
 
       [type="checkbox"]:not(:checked) + label:after,
@@ -100,35 +81,6 @@
     text-align: center;
 
     // width: 10em;
-
-    button {
-      width: 10em;
-      background-color: transparent;
-      margin: 0.2em;
-      padding: 0.5em;
-      text-align: center;
-      border: double;
-
-      transition: 0.1s;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &:active {
-        box-shadow: inset 0px 0px 5px $grey;
-      }
-
-      h3 {
-        margin: 0;
-        padding: 0;
-
-        span {
-          // font-family: "Pinyon Script", cursive;
-          font-style: italic;
-        }
-      }
-    }
   }
 
   @media screen and (max-width: $phone) {
@@ -137,7 +89,6 @@
     }
     .formRow {
       flex-direction: column;
-      // border: double;
       margin-bottom: 1em;
       padding: 0;
 

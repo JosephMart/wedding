@@ -1,4 +1,5 @@
 import React from "react"
+import classNames from "classnames"
 
 import "./FormEntry.scss"
 import {
@@ -75,6 +76,7 @@ const FormRow = ({ index, dispatch, ...state }) => {
       <div className="inputAction">
         <button
           type="button"
+          className="fancyButton"
           onClick={() => dispatch({ type: REMOVE_GUEST, index })}
         >
           <h4>Remove Guest</h4>
@@ -84,13 +86,13 @@ const FormRow = ({ index, dispatch, ...state }) => {
   )
 }
 
-const FormEntry = ({ state, dispatch, tryToRegister }) => {
+const FormEntry = ({ state, dispatch, show }) => {
   const rows = state.map((r, i) => (
     <FormRow key={`FormRow-${i}`} index={i} dispatch={dispatch} {...r} />
   ))
 
   return (
-    <div className="FormEntry">
+    <div className={classNames({ FormEntry: true, hide: !show, show })}>
       {/* Header */}
       <div className="formRow header">
         <div className="headerName">
@@ -109,14 +111,13 @@ const FormEntry = ({ state, dispatch, tryToRegister }) => {
 
       {/* Add new row or Submit */}
       <div className="formRow footerAdd">
-        <button type="button" onClick={() => dispatch({ type: ADD_GUEST })}>
+        <button
+          className="fancyButton"
+          type="button"
+          onClick={() => dispatch({ type: ADD_GUEST })}
+        >
           <h3>
             <span>Add Guest</span>
-          </h3>
-        </button>
-        <button onClick={tryToRegister}>
-          <h3>
-            <span>Submit</span>
           </h3>
         </button>
       </div>

@@ -39,19 +39,7 @@
     }
 
     button {
-      background-color: $backgroundColor;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
       width: 6em;
-      border: double;
-      cursor: pointer;
-
-      &:active {
-        box-shadow: inset 0px 0px 5px $grey;
-        border: solid;
-        border-width: 0.05em;
-      }
     }
   }
 
@@ -61,6 +49,10 @@
     .loading {
       margin-top: 3em;
       margin-bottom: 3em;
+    }
+
+    &.registerLoading {
+      margin-top: 12em;
     }
 
     &.correct,
@@ -90,6 +82,12 @@
   .invitationAnswer {
     text-align: center;
 
+    &.showinvitationAnswer {
+      display: block;
+      animation-name: showBlock;
+      animation-duration: 1s;
+    }
+
     fieldset {
       border: none;
     }
@@ -105,8 +103,39 @@
       left: 0.15em;
     }
 
-    h2 {
-      // font-size: 2.5em;
+    @media screen and (max-width: $phone) {
+      margin-bottom: 2em;
+      input[type="checkbox"] + label {
+        height: 100%;
+        margin-top: 1em;
+        display: block;
+      }
+    }
+  }
+
+  .submitRSVP {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: showBlock;
+    animation-duration: 1s;
+    display: none;
+
+    textarea {
+      width: 50%;
+      border: none;
+      margin-bottom: 1.5em;
+      padding: 0.5em;
+      height: 6em;
+
+      @media screen and (max-width: $phone) {
+        width: 90%;
+      }
+    }
+
+    &.showSubmit {
+      display: flex;
     }
   }
 }

@@ -18,6 +18,9 @@ import "./rsvp.scss"
 
 const pageTitle = "RSVP"
 
+// const API_URL = "http://localhost:3000"
+const API_URL = "https://registry-two.now.sh"
+
 const SearchResultsText = ({ hasSearched, foundMatch, match }) => {
   if (!hasSearched) {
     return null
@@ -30,12 +33,11 @@ const SearchResultsText = ({ hasSearched, foundMatch, match }) => {
   return (
     <>
       <p>{`Found RSVP for ${match.firstName} ${match.lastName}!`}</p>
-      {/* <p>{`Please come back later to RSVP when Joseph has the service up and running :)`}</p> */}
     </>
   )
 }
 
-const RSVPPage = () => {
+const RSVPPage = props => {
   // State for searching and finding an RSVP match
   const [searchState, setSearchState] = useState({
     hasSearched: false,
@@ -47,10 +49,12 @@ const RSVPPage = () => {
 
   // Keep track registration info, should be a state machine?
   const [registerState, setRegisterState] = useState({
-    attending: true,
+    attending: false,
     attendingModified: false,
     registered: false,
+    message: "",
     rsvpName: "",
+    registering: false,
   })
 
   // State for tracking guests added to the RSVP list
@@ -59,19 +63,35 @@ const RSVPPage = () => {
   // I am too lazy to implement a reducer to load my search fetch request...
   const { promiseInProgress } = usePromiseTracker()
 
+  if (registerState.registering) {
+    return (
+      <Layout location={pageTitle}>
+        <SEO title={pageTitle} />
+        <div className="message registerLoading">
+          <div className="loading">
+            <BeatLoader />
+          </div>
+        </div>
+      </Layout>
+    )
+  }
+
+  const handlePersonalMessage = e => {
+    const { value: message } = e.target
+    setRegisterState(state => ({ ...state, message }))
+  }
+
   /**
    * Search for RSVP invitation
    */
   const handleSearch = async () => {
     trackPromise(
       ky
-        // .get("https://registry-two.now.sh/api/canRegister", {
-        .get("http://localhost:3000/api/canRegister", {
+        .get(`${API_URL}/api/canRegister`, {
           searchParams: new URLSearchParams({ name: searchState.searchText }),
         })
         .json()
         .then(parsed => {
-          console.log(parsed)
           const { rsvp: match } = parsed
 
           setSearchState(state => ({
@@ -109,11 +129,10 @@ const RSVPPage = () => {
    * Handle the submit registration
    */
   const tryToRegister = async () => {
+    setRegisterState(state => ({ ...state, registering: true }))
     trackPromise(
       ky
-        // .post("https://registry-two.now.sh/api/register", {
-        .post("http://localhost:3000/api/register", {
-          // json: { rsvpName: registerState.match.rsvpName, users: registerState.users },
+        .post(`${API_URL}/api/register`, {
           json: {
             rsvpName: registerState.rsvpName,
             users: guestState,
@@ -125,6 +144,13 @@ const RSVPPage = () => {
             ...state,
             registered: parsed.success,
           }))
+          props.navigate("/rsvp/result", {
+            state: {
+              rsvpName: registerState.rsvpName,
+              success: parsed.success,
+              message: parsed.message,
+            },
+          })
         })
     )
   }
@@ -188,7 +214,9 @@ const RSVPPage = () => {
             wrong,
           })}
         />
-        <button onClick={handleSearch}>Search</button>
+        <button className="fancyButton" onClick={handleSearch}>
+          <h4>Search</h4>
+        </button>
       </div>
 
       {/* Search Result Message and Loader */}
@@ -207,7 +235,12 @@ const RSVPPage = () => {
 
       {/* Accept or decline invitation */}
       {correct && (
-        <div className="invitationAnswer">
+        <div
+          className={classNames({
+            invitationAnswer: true,
+            showinvitationAnswer: correct,
+          })}
+        >
           <h1 className="cursive">Will you be attending?</h1>
           <fieldset name="attending" className="fancyInputSelect">
             {/* TODO: these should be radio buttons for accessibility */}
@@ -237,16 +270,27 @@ const RSVPPage = () => {
       )}
 
       {/* RSVP Form entry */}
-      {registerState.attendingModified &&
-        correct &&
-        registerState.attending && (
-          <FormEntry
-            state={guestState}
-            dispatch={guestDispatcher}
-            setRegisterState={setRegisterState}
-            tryToRegister={tryToRegister}
-          />
-        )}
+      <FormEntry
+        show={correct && registerState.attending}
+        state={guestState}
+        dispatch={guestDispatcher}
+      />
+
+      <div
+        className={classNames({
+          submitRSVP: true,
+          showSubmit: correct && registerState.attendingModified,
+        })}
+      >
+        <textarea
+          placeholder="Optional Personal Message"
+          onChange={handlePersonalMessage}
+          value={registerState.message}
+        />
+        <button className="fancyButton" onClick={tryToRegister}>
+          <h3>Submit</h3>
+        </button>
+      </div>
     </Layout>
   )
 }

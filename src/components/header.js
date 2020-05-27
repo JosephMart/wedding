@@ -66,7 +66,7 @@ const Header = ({ location }) => {
             className="hashtag"
             href="https://www.instagram.com/explore/tags/MarryingMartinsen/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <h5>#MarryingMartinsen</h5>
           </a>
@@ -106,7 +106,7 @@ const Header = ({ location }) => {
               className="hashtag"
               href="https://www.instagram.com/explore/tags/MarryingMartinsen/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               #MarryingMartinsen
             </a>
