@@ -18,10 +18,8 @@ const RSVPResultPage = ({ location, navigate }) => {
   const rsvpState = location.state
   const needToRedirect = rsvpState?.rsvpName === undefined
 
-  console.log(needToRedirect)
   // Redirect to /rsvp if no state has been passed in
   useEffect(() => {
-    console.log("sup")
     if (needToRedirect) {
       navigate("/rsvp")
     }
@@ -31,28 +29,12 @@ const RSVPResultPage = ({ location, navigate }) => {
     return null
   }
 
-  // const searchParams = new URLSearchParams(props.location.search)
+  const headerText = rsvpState.success ? `Thanks for your RS V P!` : `Woops...`
 
-  // if (searchParams.has("error")) {
-  //   console.log("we got an error")
-  // }
-
-  // for (let p of searchParams) {
-  //   console.log(p)
-  // }
-  // console.log(searchParams)
-
-  if (rsvpState.success) {
-    return (
-      <PageWrapper>
-        <h1 className="title cursive">Thanks for your {"RS V P"}!</h1>
-        <p>We Look forward to seeing you!</p>
-      </PageWrapper>
-    )
-  }
   return (
     <PageWrapper>
-      <p>hello world</p>
+      <h1 className="title cursive">{headerText}</h1>
+      <p>{`${rsvpState.msg}`}</p>
     </PageWrapper>
   )
 }

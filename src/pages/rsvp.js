@@ -18,8 +18,8 @@ import "./rsvp.scss"
 
 const pageTitle = "RSVP"
 
-// const API_URL = "http://localhost:3000"
-const API_URL = "https://registry-two.now.sh"
+const API_URL = "http://localhost:3000"
+// const API_URL = "https://registry-two.now.sh"
 
 const SearchResultsText = ({ hasSearched, foundMatch, match }) => {
   if (!hasSearched) {
@@ -135,7 +135,10 @@ const RSVPPage = props => {
         .post(`${API_URL}/api/register`, {
           json: {
             rsvpName: registerState.rsvpName,
-            users: guestState,
+            message: registerState.message,
+            // send an empty array if not attending
+            users: registerState.attending ? guestState : [],
+            attending: registerState.attending,
           },
         })
         .json()
@@ -148,7 +151,8 @@ const RSVPPage = props => {
             state: {
               rsvpName: registerState.rsvpName,
               success: parsed.success,
-              message: parsed.message,
+              msg: parsed.msg,
+              data: parsed.data,
             },
           })
         })
@@ -283,7 +287,7 @@ const RSVPPage = props => {
         })}
       >
         <textarea
-          placeholder="Optional Personal Message"
+          placeholder="Leave a Message for the Bride &amp; Groom..."
           onChange={handlePersonalMessage}
           value={registerState.message}
         />
