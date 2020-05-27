@@ -18,8 +18,8 @@ import "./rsvp.scss"
 
 const pageTitle = "RSVP"
 
-const API_URL = "http://localhost:3000"
-// const API_URL = "https://registry-two.now.sh"
+// const API_URL = "http://localhost:3000"
+const API_URL = "https://registry-two.now.sh"
 
 const SearchResultsText = ({ hasSearched, foundMatch, match }) => {
   if (!hasSearched) {
