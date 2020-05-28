@@ -5,11 +5,14 @@ import SEO from "../components/seo"
 
 const pageTitle = "Wedding"
 
-const WeddingPage = () => (
-  <Layout location={pageTitle}>
-    <SEO title={pageTitle} />
-    <h1 className="title cursive">Wedding</h1>
-  </Layout>
-)
+const WeddingPage = () => {
+  console.log(process.env.GATSBY_LOL_TEST)
+  return (
+    <Layout location={pageTitle}>
+      <SEO title={pageTitle} />
+      <h1 className="title cursive">Wedding</h1>
+    </Layout>
+  )
+}
 
 export default WeddingPage
