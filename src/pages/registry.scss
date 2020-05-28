@@ -12,29 +12,35 @@
     // height: 15em;
   }
 
-  .logo {
+  a {
     margin: 3em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    .amazon {
-      width: 20em;
-      // border: dashed;
+
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(6, 67, 124, 0.5),
+        0 6px 20px 0 rgba(6, 67, 124, 0.5);
     }
 
-    .bbb {
-      padding: 2em;
-      width: 20em;
-    }
+    .logo {
+      .amazon {
+        width: 20em;
+      }
 
-    .crate {
-      padding: 2em;
-      width: 30em;
-      height: 8em;
-    }
+      .bbb {
+        padding: 2em;
+        width: 20em;
+      }
 
-    .pottery {
-      padding: 2em;
-      width: 20em;
-      // height: 20em;
+      .crate {
+        padding: 2em;
+        width: 30em;
+        height: 8em;
+      }
+
+      .pottery {
+        padding: 2em;
+        width: 20em;
+      }
     }
   }
 
@@ -45,30 +51,32 @@
       margin: 0em;
     }
 
-    .logo {
+    a {
       margin: 2em;
 
-      .amazon {
-        // width: 5em;
-        // height: 5em;
-        // border: dashed;
-      }
+      .logo {
+        .amazon {
+          // width: 5em;
+          // height: 5em;
+          // border: dashed;
+        }
 
-      .bbb {
-        // padding: 2em;
-        // width: 20em;
-      }
+        .bbb {
+          // padding: 2em;
+          // width: 20em;
+        }
 
-      .crate {
-        // padding: 2em;
-        width: 20em;
-        // height: 3em;
-      }
+        .crate {
+          // padding: 2em;
+          width: 20em;
+          // height: 3em;
+        }
 
-      .pottery {
-        // padding: 2em;
-        // width: 20em;
-        // height: 20em;
+        .pottery {
+          // padding: 2em;
+          // width: 20em;
+          // height: 20em;
+        }
       }
     }
   }

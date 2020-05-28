@@ -20,25 +20,50 @@ const IndexPage = () => (
     <p className="titleInfo">Here are some places we looked at.</p>
 
     <div className="row">
-      <div className="logo">
-        <img
-          src={AmazonImg}
-          className="amazon"
-          alt="Registry Location Amazon"
-        />
-      </div>
-      <div className="logo">
-        <img src={BBBImg} className="bbb" alt="Bed Bath & Beyond Logo" />
-      </div>
-      <div className="logo">
-        <img src={PotteryImg} className="pottery" alt="Pottery Barn Logo" />
-      </div>
+      <a
+        href="https://www.amazon.com/wedding/share/marrying-martinsen"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="logo">
+          <img
+            src={AmazonImg}
+            className="amazon"
+            alt="Registry Location Amazon"
+          />
+        </div>
+      </a>
+      <a
+        href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/548792761?eventType=Wedding"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="logo">
+          <img src={BBBImg} className="bbb" alt="Bed Bath & Beyond Logo" />
+        </div>
+      </a>
+
+      <a
+        href="https://www.potterybarn.com/registry/fss5x6hxqs/registry-list.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="logo">
+          <img src={PotteryImg} className="pottery" alt="Pottery Barn Logo" />
+        </div>
+      </a>
     </div>
 
     <div className="row">
-      <div className="logo">
-        <img src={CrateImg} className="crate" alt="Crate & Barrel Logo" />
-      </div>
+      <a
+        href="https://www.crateandbarrel.com/gift-registry/savannah-harper-and-joseph-martinsen/r6114275"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="logo">
+          <img src={CrateImg} className="crate" alt="Crate & Barrel Logo" />
+        </div>
+      </a>
     </div>
     {/* amazon, bed bath and beyond, pottery barn, crate and barrel */}
     {/* <AmazonImg /> */}
