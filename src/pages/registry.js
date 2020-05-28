@@ -9,7 +9,6 @@ import AmazonImg from "../images/registry/amazon.png"
 import BBBImg from "../images/registry/bbb.svg"
 import CrateImg from "../images/registry/crateBarrel.png"
 import PotteryImg from "../images/registry/pottery.png"
-// import PotteryBarnImg from "../images/registry/potteryBarn.svg"
 
 const pageTitle = "Registry"
 
@@ -17,7 +16,15 @@ const IndexPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
     <h1 className="title cursive">Registry</h1>
-    <p className="titleInfo">Here are some places we looked at.</p>
+
+    <div className="titleInfo">
+      <p>While we are the Bride and Groom </p>
+      <p>We can’t wait to celebrate with you</p>
+      <p>Yet if a gift is your intention</p>
+      <p>We thought that we would mention</p>
+      <p>We’d love a treasure from our registry </p>
+      <p>To start the home of our little family</p>
+    </div>
 
     <div className="row">
       <a
