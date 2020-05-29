@@ -1,0 +1,29 @@
+@import "../components/constants.scss";
+
+$side: 20%;
+$sideMobile: 5%;
+
+#Wedding {
+  margin-left: $side;
+  margin-right: $side;
+  text-align: center;
+
+  .mapContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20em;
+  }
+
+  .infoWindow {
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: $phone) {
+    margin-left: $sideMobile;
+    margin-right: $sideMobile;
+  }
+}
