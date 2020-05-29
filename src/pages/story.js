@@ -35,14 +35,11 @@ const IndexPage = () => (
     </div>
 
     <p>
-      Joseph knew that Savannah wouldn’t walk under the Century Tree on campus
-      at Texas A&M University until she was engaged so to keep the tradition and
-      magic of the action alive. It is said that when you walk under the tree
-      with someone y’all will last forever. Savannah only wanted this with the
-      person she would spend forever with. Joseph knew this would be the perfect
-      place to ask her to spend forever with him. After lots of planning and
-      some help from some friends, Joseph got down on one knee and Savannah said
-      yes to forever.
+      It is said that when you walk under the Century Tree with someone, you all
+      will last forever. Joseph knew this would be the perfect place to ask her
+      to spend forever with him. After lots of planning and some help from some
+      friends, Joseph got down on one knee and Savannah said yes to forever
+      together.
     </p>
 
     <h3>Happily, Ever After</h3>
