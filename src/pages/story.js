@@ -20,7 +20,7 @@ const IndexPage = () => (
 
     <h3>Once Upon a Time </h3>
     <p>
-      These two met on Thursday August 28<sup>th</sup>, 2015 while attending the
+      We met on Thursday August 28<sup>th</sup>, 2015 while attending the
       freshmen Connect retreat at St. Mary’s Catholic Student Center in
       Aggieland. We started that weekend just wanting to make friends and get
       involved at St. Mary’s. Little did we know that our connection from our

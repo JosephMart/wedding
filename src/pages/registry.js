@@ -72,11 +72,6 @@ const IndexPage = () => (
         </div>
       </a>
     </div>
-    {/* amazon, bed bath and beyond, pottery barn, crate and barrel */}
-    {/* <AmazonImg /> */}
-    {/* <img src={BBBImg} alt="Bed Bath & Beyond Logo" height="130px" /> */}
-    {/* <PotteryBarnImg /> */}
-    {/* <img src={PotteryBarnImg} alt="Pottery Barn Logo" height="130px" /> */}
   </Layout>
 )
 
