@@ -20,15 +20,15 @@ $sideMobile: 5%;
   }
 
   a {
-    color: $grey;
+    color: rgb(0, 98, 190);
     transition: 0.2s;
 
     &:visited {
-      color: $grey;
+      color: rgb(0, 98, 190);
     }
 
     &:hover {
-      color: rgb(0, 98, 190);
+      color: $grey;
     }
 
     address {
