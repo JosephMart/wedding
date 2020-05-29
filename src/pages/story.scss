@@ -1,0 +1,12 @@
+@import "../components/constants.scss";
+
+$side: 20%;
+#Story {
+  margin-left: $side;
+  margin-right: $side;
+
+  h3 {
+    text-align: center;
+    font-style: italic;
+  }
+}
