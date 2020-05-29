@@ -1,6 +1,8 @@
 @import "../components/constants.scss";
 
 $side: 20%;
+$sideMobile: 5%;
+
 #Story {
   margin-left: $side;
   margin-right: $side;
@@ -8,5 +10,10 @@ $side: 20%;
   h3 {
     text-align: center;
     font-style: italic;
+  }
+
+  @media screen and (max-width: $phone) {
+    margin-left: $sideMobile;
+    margin-right: $sideMobile;
   }
 }
