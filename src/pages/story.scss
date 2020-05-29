@@ -12,6 +12,10 @@ $sideMobile: 5%;
     font-style: italic;
   }
 
+  .image {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
   @media screen and (max-width: $phone) {
     margin-left: $sideMobile;
     margin-right: $sideMobile;

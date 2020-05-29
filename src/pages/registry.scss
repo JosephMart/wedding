@@ -51,36 +51,14 @@
   @media screen and (max-width: $phone) {
     .row {
       flex-direction: column;
-      // justify-content: start;
       margin: 0em;
     }
 
     a {
       margin: 2em;
 
-      .logo {
-        .amazon {
-          // width: 5em;
-          // height: 5em;
-          // border: dashed;
-        }
-
-        .bbb {
-          // padding: 2em;
-          // width: 20em;
-        }
-
-        .crate {
-          // padding: 2em;
-          width: 20em;
-          // height: 3em;
-        }
-
-        .pottery {
-          // padding: 2em;
-          // width: 20em;
-          // height: 20em;
-        }
+      .crate {
+        width: 20em;
       }
     }
   }
