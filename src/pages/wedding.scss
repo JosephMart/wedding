@@ -19,11 +19,24 @@ $sideMobile: 5%;
     height: 20em;
   }
 
-  address {
-    margin: 1em;
-    p {
-      margin: 0;
-      padding: 0;
+  a {
+    color: $grey;
+    transition: 0.2s;
+
+    &:visited {
+      color: $grey;
+    }
+
+    &:hover {
+      color: rgb(0, 98, 190);
+    }
+
+    address {
+      margin: 1em;
+      p {
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 
