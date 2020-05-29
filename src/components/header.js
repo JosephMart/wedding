@@ -8,9 +8,8 @@ import "./header.scss"
 const links = [
   ["Home", "/"],
   ["Our Story", "/story/"],
-  ["Wedding", "/wedding/"],
+  ["Wedding Details", "/wedding/"],
   ["Wedding Party", "/party/"],
-  ["Travel", "/travel/"],
   ["Registry", "/registry/"],
   ["RSVP", "/rsvp/"],
 ]
