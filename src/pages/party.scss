@@ -5,6 +5,7 @@ $mobileSquareSpacing: 3.5em;
 #WeddingParty {
   margin-left: 15%;
   margin-right: 15%;
+
   .titleHead {
     border-bottom: double;
     padding-bottom: 0.5em;
@@ -77,12 +78,8 @@ $mobileSquareSpacing: 3.5em;
       // height: 0;
     }
   }
-  // .bar {
-  //   border-right: none;
-  //   border-bottom: double;
-  //   width: 100%;
-  //   border-left: none;
-  //   padding: 0.0339em;
-  //   align-self: stretch;
-  // }
+  @media screen and (max-width: $phone) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

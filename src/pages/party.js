@@ -14,6 +14,7 @@ import AudreyImg from "../images/party/bridesMaids/audrey"
 import ClareImg from "../images/party/bridesMaids/clare"
 import MichelleImg from "../images/party/bridesMaids/michelle"
 import GeorgieImg from "../images/party/bridesMaids/georgie"
+import AhlynImg from "../images/party/bridesMaids/ashlyn"
 
 import "./party.scss"
 
@@ -45,7 +46,7 @@ const partyMembers = [
   { name: "Georgie Metz", Img: GeorgieImg },
   { name: "Tristan Partin" },
 
-  { name: "Ashlyn Harper" },
+  { name: "Ashlyn Harper", Img: AhlynImg },
   { name: "" },
 ]
 
