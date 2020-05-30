@@ -32,7 +32,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "NO LICENSE",
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",

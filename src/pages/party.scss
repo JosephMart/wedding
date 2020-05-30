@@ -3,11 +3,12 @@
 $mobileSquareSpacing: 3.5em;
 
 #WeddingParty {
+  margin-left: 15%;
+  margin-right: 15%;
   .titleHead {
     border-bottom: double;
     padding-bottom: 0.5em;
-    margin-left: $sideMargin;
-    margin-right: $sideMargin;
+
     text-align: center;
 
     @media screen and (max-width: $phone) {
@@ -45,6 +46,10 @@ $mobileSquareSpacing: 3.5em;
       flex-grow: 1;
       text-align: center;
       flex-basis: 0;
+
+      .partyImg {
+        margin-bottom: 1em;
+      }
 
       @media screen and (max-width: $phone) {
         margin-top: $mobileSquareSpacing;

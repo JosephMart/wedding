@@ -437,9 +437,10 @@ h6 {
 
 .cursive {
   font-family: "Pinyon Script", cursive;
-
   font-weight: 400;
+
   &.initials {
+    margin: 1.5em;
     font-size: 2em;
   }
 }

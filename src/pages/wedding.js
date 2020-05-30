@@ -12,20 +12,18 @@ const WeddingPage = () => (
   <Layout location={pageTitle} idName="Wedding">
     <SEO title={pageTitle} />
     <h1 className="title cursive">Wedding</h1>
-    <p>
-      The mass will begin promptly at 4:30 PM at
-      <a
-        href="https://maps.google.com/maps?ll=29.426978,-98.54315&z=17&t=m&hl=en-US&gl=US&mapclient=apiv3&cid=4826326906391070726"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <address>
-          <p>Sacred Heart Chapel</p>
-          <p>Pvt Rd</p>
-          <p>San Antonio, TX 78237</p>
-        </address>
-      </a>
-    </p>
+    <p>The mass will begin promptly at 4:30 PM at</p>
+    <a
+      href="https://maps.google.com/maps?ll=29.426978,-98.54315&z=17&t=m&hl=en-US&gl=US&mapclient=apiv3&cid=4826326906391070726"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <address>
+        <p>Sacred Heart Chapel</p>
+        <p>Pvt Rd</p>
+        <p>San Antonio, TX 78237</p>
+      </address>
+    </a>
 
     <h1 className="cursive">Reception</h1>
     <p>A cocktail hour, dinner &amp; dancing will follow at 6:30 PM at</p>
