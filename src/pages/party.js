@@ -16,6 +16,9 @@ import MichelleImg from "../images/party/bridesMaids/michelle"
 import GeorgieImg from "../images/party/bridesMaids/georgie"
 import AhlynImg from "../images/party/bridesMaids/ashlyn"
 
+// Groomsmen
+import EthanImg from "../images/party/groomsMen/ethan"
+
 import "./party.scss"
 
 const pageTitle = "Wedding Party"
@@ -24,6 +27,9 @@ const pageTitle = "Wedding Party"
 const partyMembers = [
   { name: "Carlisle Harper", title: "Maid of Honor", Img: CarlisleImg },
   { name: "Zachary Balciunas", title: "Best Man" },
+
+  { name: "Michelle Martinsen", Img: MichelleImg },
+  { name: "Patrick Powers" },
 
   { name: "Emily Harris", Img: EmilyImg },
   { name: "Jorge Arevalo" },
@@ -40,11 +46,11 @@ const partyMembers = [
   { name: "Clare Lamers", Img: ClareImg },
   { name: "Andrew Griesel" },
 
-  { name: "Michelle Martinsen", Img: MichelleImg },
-  { name: "Patrick Powers" },
-
   { name: "Georgie Metz", Img: GeorgieImg },
   { name: "Tristan Partin" },
+
+  { name: "Marie Martinsen" },
+  { name: "Ethan Partin", Img: EthanImg },
 
   { name: "Ashlyn Harper", Img: AhlynImg },
   { name: "" },
