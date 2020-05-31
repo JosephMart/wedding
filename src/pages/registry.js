@@ -28,16 +28,12 @@ const IndexPage = () => (
 
     <div className="row">
       <a
-        href="https://www.amazon.com/wedding/share/marrying-martinsen"
+        href="https://www.crateandbarrel.com/gift-registry/savannah-harper-and-joseph-martinsen/r6114275"
         target="_blank"
         rel="noopener noreferrer"
       >
         <div className="logo">
-          <img
-            src={AmazonImg}
-            className="amazon"
-            alt="Registry Location Amazon"
-          />
+          <img src={CrateImg} className="crate" alt="Crate & Barrel Logo" />
         </div>
       </a>
       <a
@@ -49,7 +45,9 @@ const IndexPage = () => (
           <img src={BBBImg} className="bbb" alt="Bed Bath & Beyond Logo" />
         </div>
       </a>
+    </div>
 
+    <div className="row">
       <a
         href="https://www.potterybarn.com/registry/fss5x6hxqs/registry-list.html"
         target="_blank"
@@ -59,16 +57,17 @@ const IndexPage = () => (
           <img src={PotteryImg} className="pottery" alt="Pottery Barn Logo" />
         </div>
       </a>
-    </div>
-
-    <div className="row">
       <a
-        href="https://www.crateandbarrel.com/gift-registry/savannah-harper-and-joseph-martinsen/r6114275"
+        href="https://www.amazon.com/wedding/share/marrying-martinsen"
         target="_blank"
         rel="noopener noreferrer"
       >
         <div className="logo">
-          <img src={CrateImg} className="crate" alt="Crate & Barrel Logo" />
+          <img
+            src={AmazonImg}
+            className="amazon"
+            alt="Registry Location Amazon"
+          />
         </div>
       </a>
     </div>
