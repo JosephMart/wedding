@@ -10,6 +10,18 @@ $sideMobile: 5%;
 
   h3 {
     font-style: italic;
+    margin-bottom: 0;
+  }
+
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+
+    p {
+      width: 50%;
+    }
   }
 
   .image {
@@ -21,5 +33,11 @@ $sideMobile: 5%;
   @media screen and (max-width: $phone) {
     margin-left: $sideMobile;
     margin-right: $sideMobile;
+
+    .text {
+      p {
+        width: 100%;
+      }
+    }
   }
 }

@@ -18,6 +18,7 @@ import AhlynImg from "../images/party/bridesMaids/ashlyn"
 
 // Groomsmen
 import EthanImg from "../images/party/groomsMen/ethan"
+import TristanImg from "../images/party/groomsMen/tristan"
 
 import "./party.scss"
 
@@ -28,38 +29,33 @@ const partyMembers = [
   { name: "Carlisle Harper", title: "Maid of Honor", Img: CarlisleImg },
   { name: "Zachary Balciunas", title: "Best Man" },
 
-  { name: "Michelle Martinsen", Img: MichelleImg },
-  { name: "Patrick Powers" },
-
-  { name: "Emily Harris", Img: EmilyImg },
-  { name: "Jorge Arevalo" },
-
-  { name: "Amanda Powers", Img: AmandaImg },
-  { name: "Juan Camillo Arevallo" },
-
   { name: "Elizabeth Hans", Img: ElizabethImg },
-  { name: "Hudson Birdsong" },
-
-  { name: "Audrey Aguilar", Img: AudreyImg },
   { name: "Cade Rampy" },
-
-  { name: "Clare Lamers", Img: ClareImg },
-  { name: "Andrew Griesel" },
-
-  { name: "Georgie Metz", Img: GeorgieImg },
-  { name: "Tristan Partin" },
-
-  { name: "Marie Martinsen" },
-  { name: "Ethan Partin", Img: EthanImg },
 
   { name: "Ashlyn Harper", Img: AhlynImg },
   { name: "" },
-]
 
-// const partyMembers = [...Array(20)].map((_, i) => ({
-//   name: i % 2 ? `Joseph-${i}` : `Savannah-${i}`,
-//   title: "title",
-// }))
+  { name: "Emily Harris", Img: EmilyImg },
+  { name: "Hudson Birdsong" },
+
+  { name: "Audrey Aguilar", Img: AudreyImg },
+  { name: "Andrew Griesel" },
+
+  { name: "Clare Lamers", Img: ClareImg },
+  { name: "Tristan Partin", Img: TristanImg },
+
+  { name: "Georgie Metz", Img: GeorgieImg },
+  { name: "Ethan Partin", Img: EthanImg },
+
+  { name: "Amanda Powers", Img: AmandaImg },
+  { name: "Patrick Powers" },
+
+  { name: "Michelle Martinsen", Img: MichelleImg },
+  { name: "Juan Camillo Arevallo" },
+
+  { name: "Marie Martinsen" },
+  { name: "Jorge Arevalo" },
+]
 
 const PersonSquare = ({ name, i, title, Img }) => (
   <div key={name} className="square">
@@ -72,6 +68,7 @@ const PersonSquare = ({ name, i, title, Img }) => (
 const genPartySquares = () => {
   const partySquares = []
 
+  // create the rows
   for (let i = 1; i < partyMembers.length; i += 2) {
     partySquares.push(
       <>
@@ -81,6 +78,8 @@ const genPartySquares = () => {
       </>
     )
   }
+
+  // create the cols
   return partySquares.map((children, i) => (
     <div key={`partSquare-${i}`} className="partySquares">
       {children}
