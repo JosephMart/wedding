@@ -308,7 +308,7 @@ button.fancyButton {
   /* accessibility */
   [type="checkbox"]:checked:focus + label:before,
   [type="checkbox"]:not(:checked):focus + label:before {
-    border: 2px solid blue;
+    border: 2px solid $lightBlue;
   }
 
   /* hover style just for information */
