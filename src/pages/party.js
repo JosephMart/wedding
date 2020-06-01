@@ -15,10 +15,13 @@ import ClareImg from "../images/party/bridesMaids/clare"
 import MichelleImg from "../images/party/bridesMaids/michelle"
 import GeorgieImg from "../images/party/bridesMaids/georgie"
 import AhlynImg from "../images/party/bridesMaids/ashlyn"
+import MarieImg from "../images/party/bridesMaids/marie"
 
 // Groomsmen
 import EthanImg from "../images/party/groomsMen/ethan"
 import TristanImg from "../images/party/groomsMen/tristan"
+import WyattImg from "../images/party/groomsMen/wyatt"
+import ZachImg from "../images/party/groomsMen/zach"
 
 import "./party.scss"
 
@@ -27,13 +30,13 @@ const pageTitle = "Wedding Party"
 // TODO: actually fill this in
 const partyMembers = [
   { name: "Carlisle Harper", title: "Maid of Honor", Img: CarlisleImg },
-  { name: "Zachary Balciunas", title: "Best Man" },
+  { name: "Zachary Balciunas", title: "Best Man", Img: ZachImg },
 
   { name: "Elizabeth Hans", Img: ElizabethImg },
   { name: "Cade Rampy" },
 
   { name: "Ashlyn Harper", Img: AhlynImg },
-  { name: "" },
+  { name: "Wyatt Harper", Img: WyattImg },
 
   { name: "Emily Harris", Img: EmilyImg },
   { name: "Hudson Birdsong" },
@@ -53,7 +56,7 @@ const partyMembers = [
   { name: "Michelle Martinsen", Img: MichelleImg },
   { name: "Juan Camillo Arevallo" },
 
-  { name: "Marie Martinsen" },
+  { name: "Marie Martinsen", Img: MarieImg },
   { name: "Jorge Arevalo" },
 ]
 
