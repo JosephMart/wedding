@@ -11,7 +11,9 @@ const pageTitle = "Home"
 const IndexPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
-    <HomeImg />
+    <div className="homeImg">
+      <HomeImg />
+    </div>
     <br />
 
     <div className="names">

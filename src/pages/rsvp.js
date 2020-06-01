@@ -136,8 +136,7 @@ const RSVPPage = props => {
           json: {
             rsvpName: registerState.rsvpName,
             message: registerState.message,
-            // send an empty array if not attending
-            users: registerState.attending ? guestState : [],
+            users: guestState,
             attending: registerState.attending,
           },
         })

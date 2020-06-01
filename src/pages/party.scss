@@ -3,11 +3,13 @@
 $mobileSquareSpacing: 3.5em;
 
 #WeddingParty {
+  margin-left: 15%;
+  margin-right: 15%;
+
   .titleHead {
     border-bottom: double;
     padding-bottom: 0.5em;
-    margin-left: $sideMargin;
-    margin-right: $sideMargin;
+
     text-align: center;
 
     @media screen and (max-width: $phone) {
@@ -40,11 +42,15 @@ $mobileSquareSpacing: 3.5em;
     }
 
     .square {
-      margin-top: 4em;
-      margin-bottom: 4em;
+      margin-top: 2em;
+      margin-bottom: 2em;
       flex-grow: 1;
       text-align: center;
       flex-basis: 0;
+
+      .partyImg {
+        margin-bottom: 1em;
+      }
 
       @media screen and (max-width: $phone) {
         margin-top: $mobileSquareSpacing;
@@ -60,7 +66,6 @@ $mobileSquareSpacing: 3.5em;
       border-right: solid 0.9px;
       border-left: solid 0.9px;
       padding: 0.0339em;
-      // height: 90%;
       align-self: stretch;
       @media screen and (max-width: $phone) {
         display: none;
@@ -69,15 +74,10 @@ $mobileSquareSpacing: 3.5em;
 
     .break {
       flex-basis: 100%;
-      // height: 0;
     }
   }
-  // .bar {
-  //   border-right: none;
-  //   border-bottom: double;
-  //   width: 100%;
-  //   border-left: none;
-  //   padding: 0.0339em;
-  //   align-self: stretch;
-  // }
+  @media screen and (max-width: $phone) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

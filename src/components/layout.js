@@ -18,7 +18,6 @@ const Layout = ({ location, children, idName = "" }) => {
         <Header location={location} />
         <main id={idName === "" ? location : idName}>
           {children}
-          {/* Footer */}
           <div className="footer">
             <h1 className="cursive initials">S &amp; J</h1>
           </div>
