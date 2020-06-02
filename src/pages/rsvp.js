@@ -18,7 +18,7 @@ import "./rsvp.scss"
 
 const pageTitle = "RSVP"
 
-const API_URL = process.env.GATSBY_MAP_KEY || "http://localhost:3000"
+const API_URL = process.env.GATSBY_API_URL || "http://localhost:3000"
 
 const SearchResultsText = ({ hasSearched, foundMatch, match }) => {
   if (!hasSearched) {
