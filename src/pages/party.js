@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import PlaceHolder from "../images/placeHolder"
 import PlaceHolder from "../images/party/blankProfile"
 
 // Bridesmaids
@@ -14,7 +13,7 @@ import AudreyImg from "../images/party/bridesMaids/audrey"
 import ClareImg from "../images/party/bridesMaids/clare"
 import MichelleImg from "../images/party/bridesMaids/michelle"
 import GeorgieImg from "../images/party/bridesMaids/georgie"
-import AhlynImg from "../images/party/bridesMaids/ashlyn"
+import AshlynImg from "../images/party/bridesMaids/ashlyn"
 import MarieImg from "../images/party/bridesMaids/marie"
 
 // Groomsmen
@@ -28,7 +27,6 @@ import "./party.scss"
 
 const pageTitle = "Wedding Party"
 
-// TODO: actually fill this in
 const partyMembers = [
   { name: "Carlisle Harper", title: "Maid of Honor", Img: CarlisleImg },
   { name: "Zachary Balciunas", title: "Best Man", Img: ZachImg },
@@ -36,7 +34,7 @@ const partyMembers = [
   { name: "Elizabeth Hans", Img: ElizabethImg },
   { name: "Cade Rampy" },
 
-  { name: "Ashlyn Harper", Img: AhlynImg },
+  { name: "Ashlyn Harper", Img: AshlynImg },
   { name: "Wyatt Harper", Img: WyattImg },
 
   { name: "Emily Harris", Img: EmilyImg },
