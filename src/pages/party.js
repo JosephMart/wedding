@@ -22,6 +22,7 @@ import EthanImg from "../images/party/groomsMen/ethan"
 import TristanImg from "../images/party/groomsMen/tristan"
 import WyattImg from "../images/party/groomsMen/wyatt"
 import ZachImg from "../images/party/groomsMen/zach"
+import HudsonImg from "../images/party/groomsMen/hudson"
 
 import "./party.scss"
 
@@ -39,7 +40,7 @@ const partyMembers = [
   { name: "Wyatt Harper", Img: WyattImg },
 
   { name: "Emily Harris", Img: EmilyImg },
-  { name: "Hudson Birdsong" },
+  { name: "Hudson Birdsong", Img: HudsonImg },
 
   { name: "Audrey Aguilar", Img: AudreyImg },
   { name: "Andrew Griesel" },
