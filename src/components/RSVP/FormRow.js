@@ -36,38 +36,6 @@ const FormRow = ({ index, dispatch, ...state }) => {
         />
       </div>
 
-      <div className="inputAllergy">
-        <fieldset name={`allergy-${index}`} className="fancyInputSelect">
-          <legend>Food Allergy</legend>
-          <input
-            type="checkbox"
-            id={`celiac-${index}`}
-            name={`celiac-${index}`}
-            checked={state.diet.celiac}
-            onChange={handleCheckBox}
-          />
-          <label htmlFor={`celiac-${index}`}>Celiac</label>
-
-          <input
-            type="checkbox"
-            id={`dairy-${index}`}
-            name={`dairy-${index}`}
-            checked={state.diet.dairy}
-            onChange={handleCheckBox}
-          />
-          <label htmlFor={`dairy-${index}`}>Dairy</label>
-
-          <input
-            type="checkbox"
-            id={`vegetarian-${index}`}
-            name={`vegetarian-${index}`}
-            checked={state.diet.vegetarian}
-            onChange={handleCheckBox}
-          />
-          <label htmlFor={`vegetarian-${index}`}>Vegetarian</label>
-        </fieldset>
-      </div>
-
       <div className="inputAction">
         <button
           type="button"

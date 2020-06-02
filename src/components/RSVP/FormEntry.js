@@ -18,10 +18,6 @@ const FormEntry = ({ state, dispatch, show }) => {
           <h3>Name</h3>
         </div>
 
-        <div className="headerAllergy">
-          <h3>Food Restrictions</h3>
-        </div>
-
         <div className="headerAction" />
       </div>
 

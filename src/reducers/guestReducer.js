@@ -4,11 +4,6 @@ export const UPDATE_GUEST = "UPDATE_GUEST"
 
 export const EMPTY_GUEST = {
   name: "",
-  diet: {
-    vegetarian: false,
-    celiac: false,
-    dairy: false,
-  },
 }
 
 const guestReducer = (state, { type, index = -1, data }) => {
