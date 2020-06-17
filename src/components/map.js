@@ -22,6 +22,11 @@ const churchLoc = {
   lng: -98.54315,
 }
 
+const hotelLoc = {
+  lat: 29.6112564,
+  lng: -98.5957597,
+}
+
 const center = {
   lat: 29.58052,
   lng: -98.5599,
@@ -37,7 +42,7 @@ const markerReducer = (state, action) => {
       return { ...state, church: !state.church }
 
     case "hotel":
-      return { ...state, church: !state.hotel }
+      return { ...state, hotel: !state.hotel }
 
     default:
       return state
@@ -53,6 +58,7 @@ function Map() {
 
   const kenndallClick = e => mDispatch({ type: "kendall" })
   const churchClick = e => mDispatch({ type: "church" })
+  const hotelClick = e => mDispatch({ type: "hotel" })
 
   return (
     <LoadScript
@@ -71,6 +77,12 @@ function Map() {
           animation={2}
           onClick={kenndallClick}
           visible={!markerState.kendall}
+        />
+        <Marker
+          position={hotelLoc}
+          animation={2}
+          onClick={hotelClick}
+          visible={!markerState.hotel}
         />
         {markerState.church && (
           <InfoWindow position={churchLoc} onCloseClick={churchClick}>
@@ -97,6 +109,25 @@ function Map() {
               <p>Boerne, TX 78006</p>
               <a
                 href="https://maps.google.com/maps?ll=29.78995,-98.601522&z=18&t=m&hl=en-US&gl=US&mapclient=apiv3&cid=11158093104063480470"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>View on Google Maps</p>
+              </a>
+            </div>
+          </InfoWindow>
+        )}
+
+        {markerState.hotel && (
+          <InfoWindow position={hotelLoc} onCloseClick={hotelClick}>
+            <div className="infoWindow">
+              <b>TownePlace Suites by</b>
+              <br />
+              <b>Marriott Northwest at the Rim</b>
+              <p>17934 La Cantera Pkwy</p>
+              <p>San Antonio, TX 78257</p>
+              <a
+                href="https://www.google.com/maps/place/TownePlace+Suites+by+Marriott+San+Antonio+Northwest+at+The+RIM/@29.6112564,-98.5957597,18z/data=!3m1!4b1!4m8!3m7!1s0x865c656363d0757b:0xb7b8bb7f40fb57a9!5m2!4m1!1i2!8m2!3d29.611255!4d-98.5950861?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
               >

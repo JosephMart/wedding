@@ -41,11 +41,22 @@ const WeddingPage = () => (
       </a>
     </address>
 
-    <div className="accommodations">
-      <h1 className="cursive">Accommodations</h1>
-      <p>For your convenience a block of rooms will soon be reserved.</p>
-      <p>If interested, please check back soon for more information.</p>
-    </div>
+    <h1 className="cursive">Accommodations</h1>
+    <p>Rooms have been reserved for guests at</p>
+    <address>
+      <a
+        href="https://www.google.com/maps/place/TownePlace+Suites+by+Marriott+San+Antonio+Northwest+at+The+RIM/@29.6112564,-98.5957597,18z/data=!3m1!4b1!4m8!3m7!1s0x865c656363d0757b:0xb7b8bb7f40fb57a9!5m2!4m1!1i2!8m2!3d29.611255!4d-98.5950861?hl=en"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        TownePlace Suites by <br />
+        Marriott Northwest at the Rim <br />
+        17934 La Cantera Pkwy <br />
+        San Antonio, TX 78257
+      </a>
+      <p>When booking, please reference the</p>
+      <h2 className="cursive">Harper-Martinsen Wedding</h2>
+    </address>
 
     <div className="mapContainer">
       <Map />
