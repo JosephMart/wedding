@@ -35,7 +35,7 @@ const WeddingPage = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        Kendall Plantation <br />
+        Kendall Point <br />
         20 Guthrie Rd <br />
         Boerne, TX 78006
       </a>
