@@ -64,7 +64,7 @@ const PersonSquare = ({ name, i, title, Img }) => (
   <div key={name} className="square">
     {Img ? <Img /> : <PlaceHolder />}
     <h2>{name}</h2>
-    <h3>{title ? title : i % 2 ? "Bridesmaid" : "Groomsmen"}</h3>
+    <h3>{title ? title : i % 2 ? "Bridesmaid" : "Groomsman"}</h3>
   </div>
 )
 
