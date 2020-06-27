@@ -4,17 +4,15 @@ import Layout from "../components/layout"
 import Img from "../images/404Img"
 import SEO from "../components/seo"
 
+import "./404.scss"
+
 const NotFoundPage = () => (
-  <Layout>
+  <Layout idName="NotFound">
     <SEO title="Woops!" />
-    <h3 style={{ textAlign: "center ", padding: "3em" }}>
-      Looks like Joseph messed up...
-    </h3>
-    <div
-      style={{ height: "500px", justifyContent: "center", display: "block" }}
-    >
+    <div className="homeImg">
       <Img />
     </div>
+    <h3>Looks like Joseph messed up...</h3>
   </Layout>
 )
 

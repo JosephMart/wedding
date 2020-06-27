@@ -1,0 +1,31 @@
+@import "../components/constants.scss";
+
+$side: 20%;
+$sideMobile: 5%;
+
+#NotFound {
+  margin-right: $side;
+  margin-left: $side;
+  text-align: center;
+
+  h3 {
+    margin-top: 2em;
+    margin-bottom: 0em;
+  }
+
+  @media screen and (max-width: $phone) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .homeImg {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 10em;
+
+    @media screen and (max-width: $phone) {
+      margin-top: 0;
+      margin-right: $sideMobile;
+      margin-left: $sideMobile;
+    }
+  }
+}

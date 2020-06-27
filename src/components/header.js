@@ -69,7 +69,6 @@ const Header = ({ location }) => {
           >
             <h5>#MarryingMartinsen</h5>
           </a>
-          {/* <h5 className="hashtag">#MarryingMartinsen</h5> */}
         </div>
         <div className="flex-container">
           <h1>Savannah &amp; Joseph</h1>
@@ -77,6 +76,7 @@ const Header = ({ location }) => {
 
         {/* Mobile */}
         <div className="headerFixed mobileHeader">
+          {/* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
           <div
             className={classNames({
               "icon-one": true,
