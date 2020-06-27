@@ -2,7 +2,7 @@
   "name": "wedding",
   "private": true,
   "description": "A Martinsen Wedding Landing Page",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Joseph Martinsen <joseph@martinsen.com>",
   "dependencies": {
     "@react-google-maps/api": "^1.9.2",
