@@ -32,8 +32,13 @@ const center = {
   lng: -98.5599,
 }
 
+const defaultMarkerState = {
+  kendall: false,
+  church: false,
+  hotel: false,
+}
+
 const markerReducer = (state, action) => {
-  console.log(state, action)
   switch (action.type) {
     case "kendall":
       return { ...state, kendall: !state.kendall }
@@ -50,13 +55,9 @@ const markerReducer = (state, action) => {
 }
 
 function Map() {
-  const [markerState, mDispatch] = useReducer(markerReducer, {
-    kendall: false,
-    church: false,
-    hotel: false,
-  })
+  const [markerState, mDispatch] = useReducer(markerReducer, defaultMarkerState)
 
-  const kenndallClick = e => mDispatch({ type: "kendall" })
+  const kendallClick = e => mDispatch({ type: "kendall" })
   const churchClick = e => mDispatch({ type: "church" })
   const hotelClick = e => mDispatch({ type: "hotel" })
 
@@ -75,7 +76,7 @@ function Map() {
         <Marker
           position={kendallLoc}
           animation={2}
-          onClick={kenndallClick}
+          onClick={kendallClick}
           visible={!markerState.kendall}
         />
         <Marker
@@ -102,9 +103,9 @@ function Map() {
         )}
 
         {markerState.kendall && (
-          <InfoWindow position={kendallLoc} onCloseClick={kenndallClick}>
+          <InfoWindow position={kendallLoc} onCloseClick={kendallClick}>
             <div className="infoWindow">
-              <b>Kendall Plantation</b>
+              <b>Kendall Point</b>
               <p>20 Guthrie Rd</p>
               <p>Boerne, TX 78006</p>
               <a
