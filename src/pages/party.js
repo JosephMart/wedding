@@ -23,6 +23,7 @@ import WyattImg from "../images/party/groomsMen/wyatt"
 import ZachImg from "../images/party/groomsMen/zach"
 import HudsonImg from "../images/party/groomsMen/hudson"
 import CadeImg from "../images/party/groomsMen/cade"
+import BrodyImg from "../images/party/groomsMen/brody"
 
 import "./party.scss"
 
@@ -58,6 +59,9 @@ const partyMembers = [
 
   { name: "Marie Martinsen", Img: MarieImg },
   { name: "Jorge Arevalo" },
+
+  { name: "Maia Arevalo", title: "Jr. Bridesmaid" },
+  { name: "Brody Garcia", title: " Jr. Groomsman", Img: BrodyImg },
 ]
 
 const PersonSquare = ({ name, i, title, Img }) => (
