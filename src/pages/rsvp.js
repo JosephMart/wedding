@@ -196,8 +196,8 @@ const RSVPPage = props => {
       <h1 className="title cursive">{"RS V P"}</h1>
       <div className="info">
         <p>
-          Please let us know your plans here by entering your name as it appears
-          on your invitation.
+          Please let us know your plans by entering your first and last name to
+          search for your RSVP.
         </p>
         <p>
           Please RSVP by August 1<sup>st</sup>, 2020
