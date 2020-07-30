@@ -202,7 +202,6 @@ const RSVPPage = props => {
         <p>
           Please RSVP by August 1<sup>st</sup>, 2020
         </p>
-        <p>We hope we get to celebrate together!</p>
       </div>
 
       {/* Search input */}
