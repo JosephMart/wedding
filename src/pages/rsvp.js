@@ -54,6 +54,7 @@ const RSVPPage = props => {
     message: "",
     rsvpName: "",
     registering: false,
+    email: "",
   })
 
   // State for tracking guests added to the RSVP list
@@ -137,6 +138,7 @@ const RSVPPage = props => {
             message: registerState.message,
             users: guestState,
             attending: registerState.attending,
+            email: registerState.email,
           },
         })
         .json()
@@ -276,6 +278,8 @@ const RSVPPage = props => {
         show={correct && registerState.attending}
         state={guestState}
         dispatch={guestDispatcher}
+        setRegisterState={setRegisterState}
+        email={registerState.email}
       />
 
       <div
