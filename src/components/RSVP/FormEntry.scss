@@ -41,7 +41,17 @@
       width: 20em;
     }
 
-    .inputName {
+    .inputEmail {
+      text-align: center;
+      width: 30em;
+      margin-bottom: 1em;
+      input {
+        width: 15em;
+      }
+    }
+
+    .inputName,
+    .inputEmail {
       input {
         color: $grey;
         border: 0;
@@ -58,11 +68,8 @@
 
   .footerAdd {
     flex-direction: column;
-    padding: 0.5em;
-    margin: 1em;
+    padding-top: 0.5em;
     text-align: center;
-
-    // width: 10em;
   }
 
   @media screen and (max-width: $phone) {
@@ -78,6 +85,13 @@
         display: block;
       }
 
+      .inputEmail {
+        width: 20em;
+
+        input {
+          width: 10em;
+        }
+      }
       .headerName,
       .headerAllergy,
       .inputName,
