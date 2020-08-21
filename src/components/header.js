@@ -11,7 +11,7 @@ const links = [
   ["Wedding Details", "/wedding/"],
   ["Wedding Party", "/party/"],
   ["Registry", "/registry/"],
-  ["RSVP", "/rsvp/"],
+  ["Watch", "/watch/"],
 ]
 
 const Header = ({ location }) => {
