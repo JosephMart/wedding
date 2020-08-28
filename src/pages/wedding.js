@@ -55,8 +55,8 @@ const WeddingPage = () => (
         San Antonio, TX 78257
       </a>
       <p>
-        When booking, please call{" "}
-        <a href="tel:+1-888-236-2427">+1 (888) 236-2427</a> and mention the
+        When booking, please contact Carole at{" "}
+        <a href="tel:+1-210-240-2427">+1 (210) 240-9030</a> and mention the
       </p>
       <h2 className="cursive">Harper-Martinsen Wedding</h2>
     </address>
