@@ -28,7 +28,6 @@ const WatchPage = () => (
         allowFullScreen
       />
     </div>
-    )
   </Layout>
 )
 
