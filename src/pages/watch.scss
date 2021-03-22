@@ -1,7 +1,7 @@
 @import "../components/constants.scss";
 
 $side: 20%;
-$sideMobile: 0%;
+$sideMobile: 5%;
 
 #Watch {
   margin-left: $side;
@@ -39,7 +39,7 @@ $sideMobile: 0%;
         margin-bottom: 2em;
       }
     }
-    margin-left: $side;
-    margin-right: $side;
+    margin-left: $sideMobile;
+    margin-right: $sideMobile;
   }
 }

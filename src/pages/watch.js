@@ -10,13 +10,8 @@ const pageTitle = "Watch"
 const WatchPage = () => (
   <Layout location={pageTitle}>
     <SEO title={pageTitle} />
-    <h1 className="title cursive">Watch</h1>
-    <p>
-      Thank you to all of our friends and family joining us virtually, while we
-      wish we could be with you in person, we are happy you are able to
-      celebrate this special day with us! Thanks for all of your love and
-      support today and throughout our lives!
-    </p>
+    <h1 className="cursive">Livestream</h1>
+
     <div className="videoWrapper">
       <iframe
         title="livestream"
@@ -27,6 +22,21 @@ const WatchPage = () => (
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
+    </div>
+
+    <h1 className="cursive">Highlights</h1>
+
+    <div className="videoWrapper">
+      <div>
+        <iframe
+          title="highlights"
+          src="https://player.vimeo.com/video/456403905?byline=0&portrait=0"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
   </Layout>
 )
