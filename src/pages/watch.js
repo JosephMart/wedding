@@ -30,11 +30,13 @@ const WatchPage = () => (
       <div>
         <iframe
           title="highlights"
-          src="https://player.vimeo.com/video/456403905?byline=0&portrait=0"
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/jVFTowOKGuE"
           frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
+        />
       </div>
       <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
