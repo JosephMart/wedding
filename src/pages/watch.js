@@ -38,7 +38,6 @@ const WatchPage = () => (
           allowFullScreen
         />
       </div>
-      <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
   </Layout>
 )
